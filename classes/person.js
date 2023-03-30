@@ -14,13 +14,13 @@ class Person {
   static introducePeople(arr) {
 
     if(Array.isArray(arr) === false) {
-      console.log("introducePeople only takes an array as an argument.");
+      throw Error("introducePeople only takes an array as an argument.");
     }
 
     for (let i = 0; i < arr.length; i++) {
       let people = arr[i];
       if (people instanceof Person === false) {
-        console.log("All items in array must be Person class instances.");
+        throw Error("All items in array must be Person class instances.");
       }
       else {
         people.introduce();
